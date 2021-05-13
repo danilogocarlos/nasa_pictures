@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:nasa_picture/app/modules/home/domain/usecases/filter_by_date.dart';
 import 'package:nasa_picture/app/modules/home/presenter/filter_pictures/filter_pictures_state.dart';
 import '../../../../shared/theme/app_colors.dart';
 import '../../../../shared/theme/app_texts.dart';
@@ -12,13 +13,11 @@ class FilterPicturesPage extends StatefulWidget {
 }
 
 class _FilterPicturesPageState extends State<FilterPicturesPage> {
-  final bloc = Modular.get<FilterPicturesBloc>();
-
-  // String date = DateTime.now().toString().split(' ')[0];
+  FilterPicturesBloc bloc;
 
   @override
   void initState() {
-    // bloc.add(date);
+    bloc = FilterPicturesBloc(Modular.get<FilterByDate>());
     super.initState();
   }
 
@@ -146,11 +145,8 @@ class _FilterPicturesPageState extends State<FilterPicturesPage> {
       lastDate: DateTime.now(),
     ).then(
       (date) {
-        if (date == null) {
-          date = DateTime.now();
-        }
-        bloc.add(date.toString().split(' ')[0]);
-        setState(() {});
+        if (date == null) date = DateTime.now();
+        return bloc.add(date.toString().split(' ')[0]);
       },
     );
   }
