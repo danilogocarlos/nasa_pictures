@@ -3,12 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:nasa_picture/app/modules/home/presenter/list_pictures/list_pictures_bloc.dart';
 import 'package:nasa_picture/app/modules/home/presenter/list_pictures/list_pictures_state.dart';
+import 'package:nasa_picture/app/shared/theme/app_colors.dart';
 import 'package:nasa_picture/app/shared/theme/app_texts.dart';
-
-import '../../../../shared/theme/app_colors.dart';
-import '../../../../shared/theme/app_colors.dart';
-import '../../../../shared/theme/app_colors.dart';
-import '../../../../shared/theme/app_colors.dart';
 
 class ListPicturesPage extends StatefulWidget {
   ListPicturesPage({Key key}) : super(key: key);
@@ -34,9 +30,9 @@ class ListPicturesPageState extends State<ListPicturesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors().background,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: AppColors().primary,
+        backgroundColor: AppColors.primary,
         centerTitle: true,
         title: Text(
           "Nasa Pictures",
@@ -122,7 +118,7 @@ class ListPicturesPageState extends State<ListPicturesPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: AppColors().accent,
+        backgroundColor: AppColors.accent,
         onPressed: () => bloc.add(10),
         tooltip: 'Refresh',
         child: Icon(Icons.refresh),

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:nasa_picture/app/modules/home/domain/usecases/filter_by_date.dart';
 import 'package:nasa_picture/app/modules/home/presenter/filter_pictures/filter_pictures_state.dart';
-import '../../../../shared/theme/app_colors.dart';
-import '../../../../shared/theme/app_texts.dart';
+import 'package:nasa_picture/app/shared/theme/app_colors.dart';
+import 'package:nasa_picture/app/shared/theme/app_texts.dart';
 import 'filter_pictures_bloc.dart';
 
 class FilterPicturesPage extends StatefulWidget {
@@ -30,9 +30,9 @@ class _FilterPicturesPageState extends State<FilterPicturesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors().background,
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: AppColors().primary,
+        backgroundColor: AppColors.primary,
         title: Text(
           'Filter By Date',
           style: AppTexts.titleBold,
@@ -126,7 +126,7 @@ class _FilterPicturesPageState extends State<FilterPicturesPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        backgroundColor: AppColors().accent,
+        backgroundColor: AppColors.accent,
         onPressed: () {
           selectDate();
         },

@@ -7,10 +7,6 @@ import 'package:nasa_picture/app/modules/home/infra/datasources/home_datasource.
 import 'package:nasa_picture/app/modules/home/infra/models/picture_model.dart';
 import 'package:nasa_picture/app/shared/config.dart';
 
-import '../../domain/entities/picture.dart';
-import '../../infra/models/picture_model.dart';
-import '../../infra/models/picture_model.dart';
-
 class NasaPicturesDatasource implements HomeDatasource {
   final Dio dio;
 
